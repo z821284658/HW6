@@ -52,18 +52,18 @@ public class IKDDhw6
         splitLine = line.split( "," );
         // The first entry in the parts array is the gene name, the rest
         // are expression levels for that gene
-        exprValues = new int[splitLine.length - 1];
+        exprValues = new int[splitLine.length];
+        
         for(int j = 0; j < exprValues.length; j++) {
-        	if(splitLine[j + 1].equals("y")) {
+        	if(splitLine[j].equals("y")) {
         		exprValues[j] = 1;
-        	}else if(splitLine[j + 1].equals("n")) {
+        	}else if(splitLine[j].equals("n")) {
         		exprValues[j] = -1;
         	}else {
         		exprValues[j] = 0;
         	}
         }
           
-        
         // Finally, create the Gene in the array
         genes[i] = new Gene((i+1)+"", exprValues); 
         
@@ -120,6 +120,7 @@ public class IKDDhw6
     		Cur_dist = new NodeDist(genes[i].getID(),genes[j].getID(),Jacdist(genes[i],genes[j]));
     		AllDist.add(Cur_dist);
     		alldistnum++;
+    		
     		if(alldistnum<434) {
     			if(Cur_dist.getDist() < 0.4) {
     				System.out.print("R"+" ");
@@ -132,9 +133,11 @@ public class IKDDhw6
     			System.out.println(Cur_dist.getNode_begin()+" "+Cur_dist.getNode_end()+" "+Cur_dist.getDist());
     		}
     		
+    		
+    		
     	}
     }
-    System.out.println(alldistnum);
+    //System.out.println(alldistnum);
     
     
     //Jacdist(genes[0],genes[1]);
@@ -225,7 +228,7 @@ public class IKDDhw6
 	  
 	  /*
 	  for( int i = 0; i < KM.getGenes().length; ++i ) {
-		  System.out.print(KM.getGenes()[i].getString() + " ");
+		  System.out.print(KM.getGenes()[i].getID() + " ");
 		  for(int j = 0; j < KM.getGenes()[i].getAttributes().length; ++j) {
 			  
 			  System.out.print(KM.getGenes()[i].getAttributes()[j] + " ");
