@@ -122,7 +122,7 @@ public class IKDDhw6
     		alldistnum++;
     		
     		if(alldistnum<434) {
-    			if(Cur_dist.getDist() < 0.4) {
+    			if(Cur_dist.getDist() < 0.42) {
     				
     				clusters[0].getMembers().add(genes[j]);
     			}else {
