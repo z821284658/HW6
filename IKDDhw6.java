@@ -123,14 +123,14 @@ public class IKDDhw6
     		
     		if(alldistnum<434) {
     			if(Cur_dist.getDist() < 0.4) {
-    				System.out.print("R"+" ");
+    				
     				clusters[0].getMembers().add(genes[j]);
     			}else {
-    				System.out.print("D"+" ");
+    				
     				clusters[1].getMembers().add(genes[j]);
     			}
     				
-    			System.out.println(Cur_dist.getNode_begin()+" "+Cur_dist.getNode_end()+" "+Cur_dist.getDist());
+    			
     		}
     		
     		
@@ -222,20 +222,6 @@ public class IKDDhw6
 	  KM.WriteToFile();
 	  
 	  
-	  
-	  
-	  
-	  
-	  /*
-	  for( int i = 0; i < KM.getGenes().length; ++i ) {
-		  System.out.print(KM.getGenes()[i].getID() + " ");
-		  for(int j = 0; j < KM.getGenes()[i].getAttributes().length; ++j) {
-			  
-			  System.out.print(KM.getGenes()[i].getAttributes()[j] + " ");
-		  }
-		  System.out.println();
-	  }
-	  */
 	  
   }
 }
